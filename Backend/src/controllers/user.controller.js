@@ -1,6 +1,7 @@
 import { User } from "../models/user.model.js"
 import bcrypt from "bcryptjs"
 import { generateToken } from "../utils/generateToken.js"
+import { uploadOnCloudinary } from "../utils/cloudinary.js"
 
 export const signup = async (req,res) => {
     const {fullName,email,password} = req.body
@@ -89,5 +90,41 @@ export const logout = async (req,res) => {
     }
 }
 
+export const updateProfile = async (req,res) =>{
+    try {
+        const {profilePic} = req.body
+        const userId = req.user._id
+
+        if (!userId) {
+            return res.status(401).json({ message: "Unauthorized user" });
+        }
+
+        if(!profilePic){
+            res.status(400).json({message:"Profile pic is required"})
+        }
+
+        const file = await uploadOnCloudinary(profilePic)
+
+        const updatedUser = awaitUser.findByIdAndUpdate(
+            userId,
+            {profilePic:file.url},
+            {new:true}
+        )
+
+        res.json(updatedUser)
+    } catch (error) {
+        console.log("Error in updating profile",error.message)
+        res.status(500).json({message:"Internal server error"})
+    }
+}
+
+export const getCurrentUser = async (req,res) => {
+    try {
+        res.status(200).json(req.user)
+    } catch (error) {
+        console.log("Error in getting user info",error.message)
+        res.status(500).json({message:"Internal server error"})
+    }
+}
 
 
