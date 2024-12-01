@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser"
 export const app = express()
 
 app.use(cors({
-    origin:process.env.CORS_ORIGIN,
+    origin:process.env.CORS_ORIGIN || "http://localhost:5173",
     credentials:true
 }))
 
@@ -17,6 +17,6 @@ app.use(cookieParser())
 import userRouter from "./routes/user.route.js"
 import messageRouter from "./routes/message.route.js"
 
-app.use("/api/user",userRouter)
+app.use("/api/auth",userRouter)
 app.use("/api/message",messageRouter)
 

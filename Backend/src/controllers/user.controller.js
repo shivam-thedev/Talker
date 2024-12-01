@@ -52,18 +52,18 @@ export const login = async (req,res) => {
     const {email,password} = req.body
     try {
         if(!email && !password){
-            res.status(400).json({message:"all fields are required"})
+            return res.status(400).json({message:"all fields are required"})
         }
 
         const user = await User.findOne({email})
 
         if(!user){
-            res.status(400).json({message:"User does not exist"})
+            return res.status(400).json({message:"User does not exist"})
         }
 
         const isPasswordCorrect = await bcrypt.compare(password,user.password)
         if(!isPasswordCorrect){
-            res.status(400).json({message:"Invalid password"})
+            return res.status(400).json({message:"Invalid password"})
         }
 
         generateToken(user._id,res)
