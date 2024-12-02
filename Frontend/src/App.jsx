@@ -5,10 +5,12 @@ import { useEffect } from "react"
 import { Loader } from 'lucide-react';
 import { Homepage, LoginPage, ProfilePage, SettingsPage, SignUpPage } from "./pages";
 import { Toaster } from "react-hot-toast";
+import { useThemeStore } from "./store/useThemeStore";
 
 
 export const App = () => {
   const {authUser,checkAuth,isCheckingAuth} = useAuthStore()
+  const {theme} = useThemeStore()
 
   useEffect(()=>{
     checkAuth()
@@ -16,7 +18,7 @@ export const App = () => {
 
   if(isCheckingAuth && !authUser){
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex items-center justify-center h-screen">
         <Loader className="size-14 animate-spin"/>
       </div>
     )
@@ -24,7 +26,7 @@ export const App = () => {
   
   console.log({authUser})
   return (
-    <div>
+    <div data-theme={theme}> 
       <Navbar/>
       <Routes>
         <Route path="/" element={authUser ? <Homepage/> : <Navigate to = "/login"/>} />
