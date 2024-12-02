@@ -1,5 +1,5 @@
 import { Message } from "../models/message.model.js"
-import { uploadOnCloudinary } from "../utils/cloudinary.js"
+import cloudinary from "../utils/cloudinary.js"
 
 export const getUserForSidebar = async (req,res) => {
     try {
@@ -40,7 +40,7 @@ export const sendMessage = async (req,res) =>{
         
         let imageUrl
         if(image){
-            const response = await uploadOnCloudinary(image)
+            const response = await cloudinary.uploader.upload(image)
             imageUrl = response.secure_url
         }
 

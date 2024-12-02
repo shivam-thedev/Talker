@@ -1,4 +1,7 @@
 import { v2 as cloudinary } from "cloudinary";
+import {config} from "dotenv"
+
+config()
 
 cloudinary.config({ 
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME, 
@@ -6,13 +9,4 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-export const uploadOnCloudinary = async (file) => {
-    try {
-        const response = await cloudinary.uploader.upload(file,{
-            resource_type:"auto"
-        })
-        return response;
-    } catch (error) {
-        return null;
-    }
-}
+export default cloudinary

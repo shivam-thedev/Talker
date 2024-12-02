@@ -1,7 +1,7 @@
 import { User } from "../models/user.model.js"
 import bcrypt from "bcryptjs"
 import { generateToken } from "../utils/generateToken.js"
-import { uploadOnCloudinary } from "../utils/cloudinary.js"
+import cloudinary from "../utils/cloudinary.js"
 
 export const signup = async (req,res) => {
     const {fullName,email,password} = req.body
@@ -100,12 +100,12 @@ export const updateProfile = async (req,res) =>{
         }
 
         if(!profilePic){
-            res.status(400).json({message:"Profile pic is required"})
+            return res.status(400).json({message:"Profile pic is required"})
         }
 
-        const file = await uploadOnCloudinary(profilePic)
+        const file = await cloudinary.uploader.upload(profilePic)
 
-        const updatedUser = awaitUser.findByIdAndUpdate(
+        const updatedUser = await User.findByIdAndUpdate(
             userId,
             {profilePic:file.secure_url},
             {new:true}
