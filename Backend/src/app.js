@@ -18,5 +18,5 @@ import userRouter from "./routes/user.route.js"
 import messageRouter from "./routes/message.route.js"
 
 app.use("/api/auth",userRouter)
-app.use("/api/message",messageRouter)
+app.use("/api/messages",messageRouter)
 

@@ -1,14 +1,15 @@
 import { Message } from "../models/message.model.js"
 import cloudinary from "../utils/cloudinary.js"
+import { User } from "../models/user.model.js"
 
 export const getUserForSidebar = async (req,res) => {
     try {
         const loggedInUsers = req.user._id
-        const filteredUsers = await User.find({$ne:loggedInUsers}).select("-password")
+        const filteredUsers = await User.find({_id:{$ne:loggedInUsers}}).select("-password")
 
         res.status(201).json(filteredUsers)
     } catch (error) {
-        console.log("Error in getting users fro sidebar",error.message)
+        console.log("Error in getting users from sidebar",error.message)
         res.status(500).json({message:"Internal server error"})
     }
 }
@@ -35,6 +36,7 @@ export const getMessages = async (req,res) => {
 export const sendMessage = async (req,res) =>{
     try {
         const {text,image} = req.body
+        console.log(text)
         const {id:receiverId} = req.params
         const senderId = req.user._id
         
