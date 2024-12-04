@@ -9,10 +9,9 @@ import { useThemeStore } from "./store/useThemeStore";
 
 
 export const App = () => {
-  const {authUser,checkAuth,isCheckingAuth,onlineUsers} = useAuthStore()
+  const {authUser,checkAuth,isCheckingAuth} = useAuthStore()
   const {theme} = useThemeStore()
   
-  console.log({onlineUsers})
   useEffect(()=>{
     checkAuth()
   },[checkAuth])
@@ -25,7 +24,6 @@ export const App = () => {
     )
   }
   
-  console.log({authUser})
   return (
     <div data-theme={theme}> 
       <Navbar/>

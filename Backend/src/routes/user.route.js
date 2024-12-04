@@ -6,11 +6,10 @@ const router = Router()
 
 router.post("/signup",signup)
 router.post("/login",login)
-router.post("/logout",logout)
+router.post("/logout",logout) 
 
 // Protected routes
 router.post("/update-profile",verifyJWT,updateProfile)
 router.get("/current-user",verifyJWT,getCurrentUser)
-
 
 export default router

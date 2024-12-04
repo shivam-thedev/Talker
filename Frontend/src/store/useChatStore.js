@@ -36,7 +36,6 @@ export const useChatStore = create((set,get) => ({
 
     sendMessage: async (messageData) => {
         const {selectedUser,messages} = get()
-        console.log(selectedUser._id,messages)
         try {
             const res = await axiosInstance.post(`/messages/send/${selectedUser._id}`, messageData);
             console.log(res)
@@ -50,8 +49,7 @@ export const useChatStore = create((set,get) => ({
         const {selectedUser} = get()
         if (!selectedUser) return
         const socket = useAuthStore.getState().socket
-         
-        //optimize letr
+
         socket.on("newMessage",(newMessage) => {
             const isMessageSentFromSelectedUser = newMessage.senderId!== selectedUser._id
             if(isMessageSentFromSelectedUser) return

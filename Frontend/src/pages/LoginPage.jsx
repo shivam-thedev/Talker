@@ -105,8 +105,8 @@ export const LoginPage = () => {
       </div>
 
       <AuthImagePattern
-        title={"Good to See You Again!"}
-        subtitle={"Enter your credentials to catch up with your messages and keep the conversations going."}
+        title={"Welcome back!"}
+        subtitle={"Sign in to continue your conversations and catch up with your messages."}
       />
     </div>
   )
