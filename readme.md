@@ -1,32 +1,49 @@
-# Talker - Real-Time Chat Application
+# Talker
 
-Talker is a modern real-time chat application built with a Node.js backend and a React frontend. It supports user authentication, profile management, and real-time messaging using Socket.IO. The application is designed to provide seamless and efficient communication with a responsive user interface.
+Talker is a real-time chat application built with a Node.js backend and a React frontend. It supports user authentication, profile management, and real-time messaging using Socket.IO. The app is designed with a responsive and customizable user interface, leveraging Tailwind CSS and DaisyUI for styling.
 
 ## Features
 
-- **User Authentication**: Secure login and signup functionality.
-- **Profile Management**: Update user profiles with ease.
-- **Real-Time Messaging**: Chat with friends and colleagues in real-time using Socket.IO.
-- **Responsive Design**: Optimized for desktop and mobile devices.
+- **User Authentication**  
+  - Signup, Login, and Logout functionalities for seamless user experience.
 
-## Tech Stack
+- **Profile Management**  
+  - Users can update their profile picture and manage their personal details.
 
-### Backend
-- **Node.js**: JavaScript runtime for building scalable backend services.
-- **Express**: Web framework for creating robust APIs.
-- **Mongoose**: MongoDB object modeling for Node.js.
-- **Socket.IO**: Real-time communication between clients and the server.
-- **bcryptjs**: For hashing passwords securely.
-- **jsonwebtoken**: For generating and verifying authentication tokens.
-- **cloudinary**: For managing media uploads.
-- **cookie-parser**: Parse HTTP cookies.
-- **dotenv**: Manage environment variables.
+- **Real-time Messaging**  
+  - Instant communication between users, powered by Socket.IO.
 
-### Frontend
-- **React**: Library for building user interfaces.
-- **React Router DOM**: For routing and navigation.
-- **Zustand**: State management for React.
-- **React Hot Toast**: For notifications.
-- **Socket.IO Client**: For real-time event handling.
-- **Lucide React**: For beautiful icons.
-- **Axios**: HTTP client for API requests.
+- **Responsive UI**  
+  - Fully responsive design built with Tailwind CSS and DaisyUI.
+
+- **Theme Customization**  
+  - Users can personalize their experience with theme-switching options.
+
+## Dependencies
+
+### Backend Dependencies:
+- **bcryptjs**: - For hashing passwords securely.
+- **cloudinary**: - For managing media uploads (e.g., profile pictures).
+- **cookie-parser**: - To handle cookies.
+- **dotenv**: - For environment variable management.
+- **express**: - Web framework for building the backend server.
+- **jsonwebtoken**: - For secure user authentication with tokens.
+- **mongoose**: - MongoDB object modeling for database operations.
+- **socket.io**: - For real-time communication between the server and clients.
+
+### Backend Dev Dependencies:
+- **nodemon**: - For automatic server restarts during development.
+
+### Frontend Dependencies:
+- **axios**: - For making API requests to the backend.
+- **lucide-react**: - For modern, customizable icons.
+- **react**: - Frontend library for building UI components.
+- **react-dom**: - For DOM rendering of React components.
+- **react-hot-toast**: - For displaying notifications and alerts.
+- **react-router-dom**: - For routing and navigation.
+- **socket.io-client**: - Client-side integration for real-time messaging.
+- **zustand**: - State management library for React.
+
+### Frontend Styling:
+- **Tailwind CSS**: Utility-first CSS framework for responsive and modern design.
+- **DaisyUI**: Component library built on Tailwind CSS for pre-styled elements.
