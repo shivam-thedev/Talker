@@ -1,4 +1,4 @@
-import {MessageSquare} from "lucide-react"
+import {MessagesSquare} from "lucide-react"
 
 export const NoChatSelected = () => {
   return (
@@ -9,12 +9,12 @@ export const NoChatSelected = () => {
             <div
               className="flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 animate-bounce"
             >
-              <MessageSquare className="w-8 h-8 text-primary " />
+              <MessagesSquare className="w-8 h-8 text-primary " />
             </div>
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold">Welcome to TextUp!</h2>
+        <h2 className="text-2xl font-bold">Welcome to Talker!</h2>
         <p className="text-base-content/60">
           Select a conversation from the sidebar to start chatting
         </p>

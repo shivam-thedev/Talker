@@ -15,6 +15,8 @@ export const Sidebar = () => {
     getUsers()
   },[getUsers])
 
+  const filteredUsers = showOnlineOnly ? users.filter(user => onlineUsers.includes(user._id)):users
+
   if(isUserLoading) return <SidebarSkeleton/>;
 
   return (
@@ -24,7 +26,6 @@ export const Sidebar = () => {
           <Users className="size-6" />
           <span className="hidden font-medium lg:block">Contacts</span>
         </div>
-        {/* TODO: Online filter toggle */}
         <div className="items-center hidden gap-2 mt-3 lg:flex">
           <label className="flex items-center gap-2 cursor-pointer">
             <input
@@ -40,7 +41,7 @@ export const Sidebar = () => {
       </div>
 
       <div className="w-full py-3 overflow-y-auto">
-        {users.map((user) => (
+        {filteredUsers.map((user) => (
           <button
             key={user._id}
             onClick={() => setSelectedUser(user)}
@@ -73,7 +74,7 @@ export const Sidebar = () => {
           </button>
         ))}
 
-        {users.length === 0 && (
+        {filteredUsers.length === 0 && (
           <div className="py-4 text-center text-zinc-500">No online users</div>
         )}
       </div>

@@ -11,14 +11,14 @@ export const SettingsPage = () => {
   const { theme, setTheme } = useThemeStore();
 
   return (
-    <div className="container h-screen max-w-5xl px-4 pt-20 mx-auto">
-      <div className="space-y-6">
+    <div className="container h-screen max-w-5xl px-4 pt-20 mx-auto max-sm:h-full max-md:pb-6">
+      <div className="space-y-6 ">
         <div className="flex flex-col gap-1">
           <h2 className="text-lg font-semibold">Theme</h2>
           <p className="text-sm text-base-content/70">Choose a theme for your chat interface</p>
         </div>
 
-        <div className="grid grid-cols-4 gap-2 sm:grid-cols-6 md:grid-cols-8">
+        <div className="grid grid-cols-4 gap-2 sm:grid-cols-6 md:grid-cols-8 ">
           {THEMES.map((t) => (
             <button
               key={t}
@@ -43,15 +43,14 @@ export const SettingsPage = () => {
           ))}
         </div>
 
-        <h3 className="mb-3 text-lg font-semibold">Preview</h3>
-        <div className="overflow-hidden border shadow-lg rounded-xl border-base-300 bg-base-100">
+        <h3 className="mb-3 text-lg font-semibold ">Preview</h3>
+        <div className="overflow-hidden border shadow-lg rounded-xl border-base-300 bg-base-100 ">
           <div className="p-4 bg-base-200">
             <div className="max-w-lg mx-auto">
               <div className="overflow-hidden shadow-sm bg-base-100 rounded-xl">
                 <div className="px-4 py-3 border-b border-base-300 bg-base-100">
                   <div className="flex items-center gap-3">
                     <div className="flex items-center justify-center w-8 h-8 font-medium rounded-full bg-primary text-primary-content">
-                      J
                     </div>
                     <div>
                       <h3 className="text-sm font-medium">John Doe</h3>
@@ -60,7 +59,7 @@ export const SettingsPage = () => {
                   </div>
                 </div>
 
-                <div className="p-4 space-y-4 min-h-[200px] max-h-[200px] overflow-y-auto bg-base-100">
+                <div className="p-4 space-y-4 min-h-[200px] max-h-[200px] overflow-y-auto bg-base-100 ">
                   {PREVIEW_MESSAGES.map((message) => (
                     <div
                       key={message.id}

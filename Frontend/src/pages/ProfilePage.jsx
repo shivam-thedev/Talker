@@ -21,7 +21,7 @@ export const ProfilePage = () => {
   }
   
   return (
-    <div className="h-screen pt-20">
+    <div className="h-screen pt-20 max-md:h-full max-md:pt-14">
       <div className="max-w-2xl p-4 py-8 mx-auto">
         <div className="p-6 space-y-8 bg-base-300 rounded-xl">
           <div className="text-center">

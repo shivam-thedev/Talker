@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useAuthStore } from "../store/useAuthStore"
-import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare } from "lucide-react";
+import { Eye, EyeOff, Loader2, Lock, Mail, MessagesSquare } from "lucide-react";
 import { AuthImagePattern } from "../components/AuthImagePattern";
 import {Link} from "react-router-dom"
 
@@ -26,7 +26,7 @@ export const LoginPage = () => {
               <div
                 className="flex items-center justify-center w-12 h-12 transition-colors rounded-xl bg-primary/10 group-hover:bg-primary/20"
               >
-                <MessageSquare className="w-6 h-6 text-primary" />
+                <MessagesSquare className="w-6 h-6 text-primary" />
               </div>
               <h1 className="mt-2 text-2xl font-bold">Welcome Back</h1>
               <p className="text-base-content/60">Sign in to your account</p>
@@ -105,8 +105,8 @@ export const LoginPage = () => {
       </div>
 
       <AuthImagePattern
-        title={"Welcome back!"}
-        subtitle={"Sign in to continue your conversations and catch up with your messages."}
+        title={"Good to See You Again!"}
+        subtitle={"Enter your credentials to catch up with your messages and keep the conversations going."}
       />
     </div>
   )
