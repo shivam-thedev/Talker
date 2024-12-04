@@ -1,8 +1,8 @@
-import { Homepage } from "./Homepage";
-import { LoginPage } from "./LoginPage";
-import { SignUpPage } from "./SignUpPage";
-import { ProfilePage } from "./ProfilePage";
-import { SettingsPage } from "./SettingsPage";
+import { Homepage } from "./Homepage.jsx";
+import { LoginPage } from "./LoginPage.jsx";
+import { SignUpPage } from "./SignUpPage.jsx";
+import { ProfilePage } from "./ProfilePage.jsx";
+import { SettingsPage } from "./SettingsPage.jsx";
 
 export {
     Homepage,
