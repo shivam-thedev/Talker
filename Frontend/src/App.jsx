@@ -3,7 +3,6 @@ import { Navbar } from "./components/Navbar"
 import { useAuthStore } from "./store/useAuthStore"
 import { useEffect } from "react"
 import { Loader } from 'lucide-react';
-// import { Homepage, LoginPage, ProfilePage, SettingsPage, SignUpPage } from "./pages";
 import { Homepage } from "./pages/HomePage.jsx";
 import { LoginPage } from "./pages/LoginPage.jsx";
 import { SignUpPage } from "./pages/SignUpPage.jsx";
